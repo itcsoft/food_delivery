@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} О нас {% endblock %}
+{% block content %} 
+<script>
+
+    seajs.use(['$', 'js/6v/biz/common/header/header-v4-sc.js','gdata','js/6v/biz/common/top-reached/top-reached.js'], function( $, header,
+        gdata, TopReached ){
+        var country = '';
+                    var defConf = {containerId : '#header2012'};
+        if( country !=='' ){
+            defConf = $.extend( defConf, {
+                remoteConfig : 'http://'+country+'.alibaba.com/header_config_remote.html'
+            });
+        }
+        var config = $.extend( (gdata.get('sc-header-config') || {}) , defConf);
+
+        header.run( config );
+
+        new TopReached({
+            type: 'small'
+        })
+    });
+</script>
+</div>
+</div></div>
+
+<script>
+seajs.Module.define('mm-sc-new-header', function(require, exports) {
+exports.init = function(box, module) {};
+});
+</script>
+<script>(function(f){var e,d,c;e=f.replace(/#/ig,"").split(",");for(var b=0,a=e.length;b<a;b++){d=document.getElementById(e[b]);c=d.getAttribute("data-name");seajs.use(c,function(g){g.init(d,c)})}})('#guid-1434099893453');</script>
+</div>
+</div></div>
+</div>
+</div></div>
+<div class="J_Layout layout grid-m">
+<div class="col-main">
+    <div class="main-wrap J_Region"><div class="J_Module skin-default" data-name="mm-ae-html" data-skin="default" data-guid="14071509347250" id="guid-14071509347250" data-version="30" data-type="3"><div class="module"  data-spm="1998073750"><div class="tb-module mm-ae-html">
+<!--TMS:1223786-->
+
+<link rel="stylesheet" type="text/css" href="//u.alicdn.com/css/6v/apollo/core/core-sc.css">
+<style type="text/css">
+/* common */
+.about-wrapper .ml20 {
+margin-left: 20px;
+}
+
+.about-wrapper .mr20 {
+margin-right: 20px;
+}
+
+.about-wrapper .pt50 {
+padding-top: 50px;
+}
+
+.about-wrapper .pt90 {
+padding-top: 90px;
+}
+
+.about-wrapper .bg-gray {
+background-color: #fcfcfc;
+}
+
+.about-wrapper .bg-white {
+background-color: #ffffff;
+}
+
+/* module */
+.about-wrapper {
+border-top: 1px solid #e5e5e5;
+}
+
+.about-wrapper .part-cont {
+margin: 0 auto;
+width: 1200px;
+}
+
+.about-wrapper .part-desc {
+width: 50%;
+}
+
+.about-wrapper .part-desc .title {
+height: 30px;
+line-height: 30px;
+font-size: 30px;
+padding: 40px 0;
+margin-bottom: 0;
+font-weight: bold;
+color: #666666;
+}
+
+.about-wrapper .part-desc .cont {
+font-size: 18px; /* 18px */
+color: #666666;
+}
+
+.about-wrapper .part-img {
+text-align: center;
+width: 50%;
+}
+
+.about-wrapper .part1 .part-desc {
+height: 320px;
+}
+
+.about-wrapper .part1 .part-img {
+height: 320px;
+}
+
+.about-wrapper .part1 img {
+width: 380px;
+}
+
+.about-wrapper .part2 .part-desc {
+height: 400px;
+}
+
+.about-wrapper .part2 .part-img {
+height: 400px;
+}
+
+.about-wrapper .part2 img {
+width: 290px;
+}
+
+.about-wrapper .part3 .part-desc {
+height: 450px;
+}
+
+.about-wrapper .part3 .part-img {
+height: 450px;
+}
+
+.about-wrapper .part3 img {
+width: 400px;
+}
+
+.about-wrapper .part4 .part-desc {
+height: 430px;
+}
+
+.about-wrapper .part4 .part-img {
+height: 430px;
+}
+
+.about-wrapper .part4 img {
+width: 230px;
+}
+</style>
+<div class="about-wrapper">
+    <div class="part1 bg-gray">
+         <div class="part-cont util-clearfix">
+            <div class="util-left part-desc">
+                 <div class="mr20 pt50">
+                     <h2 class="title">Про наш магазин</h2>
+                     <p class="cont">
+                        Сайт был запущен впервые в 2022 году. У нас вы можете найти и заказать почти все виды фаст фуда и домашней еды. Мы доставим заказанную вами еду в любую точку города. Спасибо что посетили наш сайт, и приятного вам аппетита! :D                       </p>
+                 </div>
+             </div>
+             <div class="util-right part-img">
+                 <div class="ml20 pt90">
+                     <img src="https://static.vecteezy.com/system/resources/previews/003/781/830/non_2x/new-year-2022-resolution-perfect-for-landing-pages-templates-ui-web-mobile-app-posters-banners-flyers-development-vector.jpg">
+                 </div>
+             </div>
+        </div>
+</div>
+
+<div class="part2 bg-white">
+        <div class="part-cont util-clearfix">
+            <div class="util-right part-desc">
+                <div class="ml20 pt50">
+                    <h2 class="title">Наша миссия</h2>
+                    <p class="cont">
+                        Наша миссия это в первую очередь: вкусно приготовить вашу еду, и как я сказал ранее, доставить ее быстро и в любую точку города (прошу заметить, за небольшую цену :)) !                         </p>
+                </div>
+            </div>
+            <div class="util-left part-img">
+                <div class="mr20 pt90">
+                   <img src="https://img.freepik.com/free-vector/set-of-linear-fast-food-icons-food-and-drink-icons-in-simple-design_115464-377.jpg?size=626&ext=jpg">
+                </div>
+            </div>
+        </div>
+</div>
+
+    
+</div>
+</div>
+
+</div></div>
+</div></div>
+</div>
+</div></div>
+<div class="J_Layout layout grid-m">
+<div class="col-main">
+    <div class="main-wrap J_Region"><div class="J_Module skin-default" data-name="mm-sc-new-footer" data-skin="default" data-guid="14074834995260" id="guid-14074834995260" data-version="75" data-type="3"><div class="module"  data-spm="1998081280"><div class="tb-module mm-sc-new-footer">
+
+
+
+<link href="//u.alicdn.com/css/6v/apollo/mod/footer/footer-v4-sc.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+
+
+
