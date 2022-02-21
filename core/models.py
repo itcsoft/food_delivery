@@ -1,8 +1,5 @@
-from distutils.command.upload import upload
 from django.db import models
-from django.forms import IntegerField
 from django.contrib.auth.models import User
-
 
 class Category(models.Model):
     title = models.CharField(max_length=50, verbose_name='Категория')
@@ -36,3 +33,23 @@ class ProductsCart(models.Model):
 
 
 
+class Customer(models.Model):
+    name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    number = models.CharField(max_length=50)
+    address = models.CharField(max_length=255)
+    message = models.TextField()
+
+    
+class Order(models.Model):
+    product = models.ForeignKey(FoodCard, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    price = models.IntegerField()
+    phone = models.IntegerField()
+    address = models.CharField(max_length=100)
+    date = models.DateTimeField(auto_now_add=True)
+
+
+
+    

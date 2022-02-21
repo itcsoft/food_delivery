@@ -564,12 +564,18 @@ ul {
     
             <form action="{% url 'search' %}" method="POST" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 {% csrf_token %}
-              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" name="search">
+              <input type="search" class="form-control form-control-dark" placeholder="Поиск..." aria-label="Search" name="search">
             </form>
     
             <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Войти</button>
+
+                {% if user.is_authenticated %}
+                <i>{{user.username}} &nbsp; </i>
+                <a href="{% url 'signout' %}" type="button" class="btn btn-warning">Выйти</a>
+                {% else %}
+              <a href="{% url 'signin' %}" type="button" class="btn btn-outline-light me-2">Войти</a>
               <a href="{% url 'signup' %}" type="button" class="btn btn-warning">Регистрация</a>
+                {% endif %}
             </div>
           </div>
         </div>
