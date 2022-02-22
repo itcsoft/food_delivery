@@ -1,8 +1,10 @@
+from os import O_RDWR
 from django.shortcuts import redirect, render
-from core.models import FoodCard, Category, ProductsCart
+from core.models import Customer, FoodCard, Category, Order
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
+from django.contrib import messages
 
 # Create your views here.
 def base(request):
@@ -155,6 +157,34 @@ def signout(request):
 
 
 def order(request):
-    return redirect('base')
+    if request.method == 'POST':
+        cart_session = request.session.get('cart_session', [])
+        if len(cart_session) == 0:
+            messages.error(request, 'Ваша корзина пустая!!!', extra_tags='danger')
+            return redirect('cart')
+        else:
+            customer = Customer()
+            customer.name = request.POST.get('c_name')
+            customer.last_name = request.POST.get('c_lname')
+            customer.number = request.POST.get('c_number')
+            customer.address = request.POST.get('c_address')
+            customer.message = request.POST.get('c_message')
+            customer.save()
+                                # 1, 2 
+            for i in range(len(cart_session)): 
+                order = Order()
+                order.product = FoodCard.objects.get(id=cart_session[i])
+                order.customer = customer
+                order.price = order.product.price
+                order.phone = customer.number
+                order.address = customer.address
+                order.save()
+
+            request.session['cart_session'] = []
+            messages.error(request, 'Заказ успешно отправлено!', extra_tags='success')
+
+            return redirect('cart')
+
+
 
     
